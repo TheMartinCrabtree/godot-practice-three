@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dwy1k1ipu0ld2"]
+[gd_scene load_steps=3 format=3 uid="uid://bdtpps8knf4mr"]
+
+[ext_resource type="Script" path="res://splash_screen.cs" id="1_vtobk"]
+[ext_resource type="Texture2D" uid="uid://ba6gee64tixhf" path="res://icon.svg" id="1_w0ou8"]
 
 [node name="SplashScreen" type="ColorRect"]
 anchors_preset = 15
@@ -7,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1.97336e-06, 0.442497, 0.452498, 1)
+script = ExtResource("1_vtobk")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -16,8 +20,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Play" type="Button" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
+texture = ExtResource("1_w0ou8")
 
-[node name="Quit" type="Button" parent="CenterContainer"]
-layout_mode = 2
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
